@@ -1,5 +1,4 @@
 body {
-    overflow: hidden;
     margin: 0;
     padding: 0;
     background-image: url("https://i.pinimg.com/originals/b6/2e/37/b62e37313f4cbb131687d428bbd6933c.jpg");
@@ -200,6 +199,9 @@ h2 {
 /*************** GRANDE *****************/
 
 @media only screen and (min-width: 480px) {
+    body {
+        overflow: hidden;
+    }
     #raton {
         display: block;
     }
@@ -326,7 +328,7 @@ h2 {
         height: 50px;
     }
     .abajo {
-        transform: translateY(-50%);
+        transform: translateY(-70%);
     }
     .menu a {
         font-size: 25px;
