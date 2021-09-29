@@ -323,12 +323,16 @@ h2 {
         font-size: 40px;
         letter-spacing: 5px;
     }
+    .fondo {
+        /* width: 100%;
+        height: 50vh; */
+    }
     /* MENU */
     .menu {
         height: 50px;
     }
     .abajo {
-        transform: translateY(-70%);
+        transform: translateY(-120%);
     }
     .menu a {
         font-size: 25px;
