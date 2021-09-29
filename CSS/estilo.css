@@ -324,13 +324,13 @@ h2 {
     }
     /* MENU */
     .menu {
-        height: 20px;
+        height: 50px;
     }
     .abajo {
-        transform: translateY(-70%);
+        transform: translateY(-50%);
     }
     .menu a {
-        font-size: 20px;
+        font-size: 25px;
         margin: 10px;
     }
     /******** CONTENIDO DE LA PAGINA ********/
