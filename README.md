@@ -1,2 +1,0 @@
-# ahorcado
-Ahorcado de Charles
