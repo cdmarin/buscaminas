@@ -73,7 +73,7 @@ iframe {
     transition: .5s;
 }
 
-/******** CONTENIDO DE LA PAGINA ********/
+/* CONTENIDO DE LA PAGINA */
 
 #secR {
     overflow-y: scroll;
@@ -315,11 +315,7 @@ h2 {
     .titPrinc {
         top: -10px;
         left: 50px;
-        font-size: 50px;
-        -webkit-text-fill-color: rgb(29, 95, 38);
-        -webkit-text-stroke: 1px white;
-        text-shadow: 0 10px 10px black, 0 10px 20px black, 0 30px 80px black;
-        font-family: "tith1";
+        font-size: 30px;
         letter-spacing: 5px;
     }
     /* MENU */
