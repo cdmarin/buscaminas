@@ -147,6 +147,7 @@ function comprobarLetra(e) {
         this.style.opacity = 0;
         this.disabled = true;
     }
+alert("p: " +pulsada) ;
 
 
     /*EN EL CASO DE QUE LAS LETRAS ESTEN ENTRE LAS INCLUIDAS Y NO SE HAYA PULSADO ANTES, ENTRA EN LA CONDICIÓN*/
@@ -315,6 +316,8 @@ function pista() {
     boton.style.opacity = 0;
     boton.disabled = true;
     comparacion(palabra.charAt(aux));
+alert("e: " +boton.id) ;
+
 
     if (palFinal.innerText == palabra) {
         mostrarFin("YOU WIN", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Check_green_icon.svg/1200px-Check_green_icon.svg.png");
