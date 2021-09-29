@@ -44,6 +44,7 @@ window.onload = function () {
     document.body.appendChild(sonido);
     sonido.play();
     sonido.volume = .2;
+    console.log(window.innerWidth + " -- " + window.innerHeight);
 
     crearBotones();
     compTam();
@@ -347,7 +348,7 @@ function stopMusica() {
 
 /* COMPRUEBA EL TAMAÑO DE LA VENTANA CUANDO SE CAMBIA EL TAMAÑO */
 function compTam() {
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 1100) {
         mostrarBotones();
     }
     else {
