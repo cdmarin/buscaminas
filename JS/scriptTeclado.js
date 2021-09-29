@@ -44,7 +44,6 @@ window.onload = function () {
     document.body.appendChild(sonido);
     sonido.play();
     sonido.volume = .2;
-    console.log(window.innerWidth + " -- " + window.innerHeight);
 
     crearBotones();
     compTam();

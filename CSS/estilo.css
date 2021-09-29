@@ -161,7 +161,6 @@ h2 {
 
 #numPistas {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
     font-weight: bold;
     float: right;
     transition: 1s;
@@ -287,6 +286,7 @@ h2 {
         transform: rotate(360deg) scale(150%);
     }
     #numPistas {
+        font-size: 20px;
         opacity: 0;
     }
     #pista:hover+#numPistas {
@@ -376,10 +376,13 @@ h2 {
         display: none;
     }
     #contPista {
-        top: 37%;
+        top: 47%;
     }
     #pista {
         width: 50px;
+    }
+    #numPistas {
+        font-size: 10px;
     }
     .button {
         width: 40px;
@@ -477,6 +480,9 @@ h2 {
     }
     #pista {
         width: 50px;
+    }
+    #numPistas {
+        font-size: 15px;
     }
     .button {
         width: 70px;
