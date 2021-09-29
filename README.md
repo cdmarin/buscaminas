@@ -1,2 +1,2 @@
-# ahorcado
-Ahorcado de Charles
+# ahorcadoCharles
+Ahorcado
