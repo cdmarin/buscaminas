@@ -1,16 +1,12 @@
-/* CREACION DE ARRAYS*/
-// var arrayPalabras = ["DOMINIO", "HAMBURGUESA", "MANDO", "CROQUETA", "HERRAMIENTA",
-//     "BOLIGRAFO", "MOCHILA", "ROBOT", "QUEMAR", "PATADA", "ROMPEDORA", "RAQUETA", "ZARIGUEYA", "MAQUETA",
-//     "MONTACARGA", "PARCELA", "PARCIAL", "MANCHA", "LLAVERO", "ESTUCHE", "LONCHERA", "ACTRIZ", "MERETRIZ",
-//     "HEXAGONO", "HAZAÑA", "ARAÑAR", "BIBLIOTECA", "MERENDAR", "BARRICADA", "CABALLERO", "CALCULADORA", "MANZANA"];
-
+/* LEEMOS EL FICHERO Y EXTRAEMOS LAS PALABRAS LINEA A LINEA Y LAS METEMOS EN EL ARRAY*/
 var lineas = [];
 fetch('TEXTO/palabras.txt')
     .then(res => res.text())
     .then(content => {
         lineas = content.split(/\n/);
-        // console.log("long: " + lineas.length);
     });
+
+/* CREACION DE ARRAYS*/
 
 var letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 letras = letras.split("");
@@ -37,6 +33,7 @@ window.onload = function () {
     elemPist = document.getElementById("numPista");
     document.documentElement.addEventListener("mousemove", func);
     window.addEventListener("resize", compTam);
+    document.body.appendChild(efectoSonido);
 
     document.getElementsByClassName("fondo")[0].style.animation = "agrandar 0s normal 0s forwards";
     document.getElementsByClassName("menu")[0].style.animation = "colorArriba 0s reverse 0s backwards";
@@ -130,6 +127,7 @@ function alternarBloque(elem) {
 */
 function creaPalabra() {
     palabra = lineas[parseInt(Math.random() * (lineas.length - 0) + 0)];
+    palabra = palabra.trim();
 
     palFinal.id = palabra;
     palFinal.innerText = "";
@@ -313,6 +311,9 @@ function pista() {
         aux = [parseInt(Math.random() * (palabra.length - 0) + 0)];
     }
 
+    var boton = document.getElementById(palabra.charAt(aux));
+    boton.style.opacity = 0;
+    boton.disabled = true;
     comparacion(palabra.charAt(aux));
 
     if (palFinal.innerText == palabra) {
@@ -331,11 +332,9 @@ function pista() {
 
 /* REPRODUCE LA MUSICA QUE SE LE PASE COMO PARAMETRO */
 function playMusica(mus) {
-    stopMusica();
 
     try {
         efectoSonido.setAttribute("src", "SONIDOS/" + mus);
-        document.body.appendChild(efectoSonido);
         efectoSonido.play();
     } catch (error) {
     }

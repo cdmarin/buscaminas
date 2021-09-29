@@ -34,6 +34,8 @@ iframe {
 }
 
 .fondo {
+    width: 100%;
+    height: 90vh;
     background-repeat: none;
     background-size: cover;
     background-image: radial-gradient(rgba(92, 92, 92, 0.295), rgba(26, 26, 26, 0.808), rgb(0, 0, 0)), url("https://newfastuff.com/wp-content/uploads/2019/05/zdNw0zw.png");
@@ -131,7 +133,6 @@ h2 {
 
 #bart {
     position: relative;
-    top: 50px;
     transition: .7s;
 }
 
@@ -215,10 +216,6 @@ h2 {
         font-size: 130px;
         letter-spacing: 30px;
     }
-    .fondo {
-        width: 100%;
-        height: 90vh;
-    }
     /* MENU */
     .menu {
         height: 60px;
@@ -266,6 +263,7 @@ h2 {
         width: 150px;
     }
     #bart {
+        top: 60px;
         width: 70px;
         transition: .7s;
     }
@@ -323,13 +321,9 @@ h2 {
         font-size: 40px;
         letter-spacing: 5px;
     }
-    .fondo {
-        /* width: 100%;
-        height: 50vh; */
-    }
     /* MENU */
     .menu {
-        height: 50px;
+        height: 90px;
     }
     .abajo {
         transform: translateY(-120%);
@@ -364,11 +358,13 @@ h2 {
         letter-spacing: 15px;
     }
     #homer {
-        right: 40px;
-        width: 110px;
+        right: 8%;
+        margin-right: -700px;
+        width: 100px;
     }
     #bart {
-        left: 84%;
+        top: 40px;
+        left: 6%;
         width: 50px;
     }
     #barraVida {
@@ -378,10 +374,10 @@ h2 {
         display: none;
     }
     #contPista {
-        top: 40%;
+        top: 37%;
     }
     #pista {
-        width: 60px;
+        width: 50px;
     }
     /* SECCION FINAL */
     #titF {
