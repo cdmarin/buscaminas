@@ -20,6 +20,8 @@ var efectoSonido = document.createElement("audio");
 var apu = document.createElement("audio");
 var goku = document.createElement("audio");
 var sonido = document.createElement("audio");
+var existeBoton = false;
+var mostBoton = false;
 
 const palFinal = document.createElement("p");
 palFinal.className = "palabra";
@@ -29,10 +31,12 @@ window.onload = function () {
     document.getElementById("inicio").addEventListener("click", accionMenu);
     document.getElementById("reglas").addEventListener("click", accionMenu);
     document.getElementById("jugar").addEventListener("click", accionMenu);
+    document.getElementById("mostBotones").addEventListener("click", eventoBoton);
     document.getElementById("pista").addEventListener("click", pista);
+
     elemPist = document.getElementById("numPista");
     document.documentElement.addEventListener("mousemove", func);
-    window.addEventListener("resize", compTam);
+
     document.body.appendChild(efectoSonido);
 
     document.getElementsByClassName("fondo")[0].style.animation = "agrandar 0s normal 0s forwards";
@@ -45,8 +49,6 @@ window.onload = function () {
     sonido.play();
     sonido.volume = .2;
 
-    crearBotones();
-    compTam();
 }
 
 function func(e) {
@@ -141,14 +143,17 @@ function creaPalabra() {
 function comprobarLetra(e) {
     if (e != "[object PointerEvent]") {
         var pulsada = e.key.toUpperCase();
+        document.getElementById(pulsada).style.opacity = 0;
+        document.getElementById(pulsada).style.disabled = true;
     }
     else {
         var pulsada = this.id;
         this.style.opacity = 0;
         this.disabled = true;
     }
-alert("p: " +pulsada) ;
-
+    for (let i = 0; i < 6; i++) {
+        // alert("ComprobarLetra: " + this.id + " ....disabled ----> " + this.disabled);
+    }
 
     /*EN EL CASO DE QUE LAS LETRAS ESTEN ENTRE LAS INCLUIDAS Y NO SE HAYA PULSADO ANTES, ENTRA EN LA CONDICIÓN*/
     if (letras.includes(pulsada) && !letrasAdiv.includes(pulsada)) {
@@ -297,6 +302,7 @@ function iniciaJuego() {
 
     const bot = document.getElementsByTagName("button");
     for (let i = 0; i < bot.length; i++) {
+        // alert("Reinicio: " + bot[i].id + " ....disabled ----> " + bot[i].disabled);
         bot[i].disabled = false;
         bot[i].style.opacity = 1;
     }
@@ -313,11 +319,13 @@ function pista() {
     }
 
     var boton = document.getElementById(palabra.charAt(aux));
+    for (let i = 0; i < 6; i++) {
+        // alert("Pista: " + boton.id + " ....disabled ----> " + boton.disabled);
+    }
+
     boton.style.opacity = 0;
     boton.disabled = true;
     comparacion(palabra.charAt(aux));
-alert("e: " +boton.id) ;
-
 
     if (palFinal.innerText == palabra) {
         mostrarFin("YOU WIN", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Check_green_icon.svg/1200px-Check_green_icon.svg.png");
@@ -349,12 +357,19 @@ function stopMusica() {
 }
 
 /* COMPRUEBA EL TAMAÑO DE LA VENTANA CUANDO SE CAMBIA EL TAMAÑO */
-function compTam() {
-    if (window.innerWidth < 1100) {
+function eventoBoton() {
+    if (!existeBoton) {
+        crearBotones();
+        existeBoton = true;
+    }
+
+    if (!mostBoton) {
         mostrarBotones();
+        mostBoton = true;
     }
     else {
         escondeBotones();
+        mostBoton = false;
     }
 }
 
@@ -373,6 +388,7 @@ function crearBotones() {
 
 /* MOSTRAR LA INTERFAZ DE BOTONES */
 function mostrarBotones() {
+    document.getElementById("letAdivinadas").style.display = "none";
     for (let i = 0; i < letras.length; i++) {
         const button = document.getElementById(letras[i]);
         if (button != null) {
@@ -383,6 +399,7 @@ function mostrarBotones() {
 
 /* ELIMINA LA INTERFAZ DE BOTONES */
 function escondeBotones() {
+    document.getElementById("letAdivinadas").style.display = "block";
     for (let i = 0; i < letras.length; i++) {
         const button = document.getElementById(letras[i]);
         if (button != null) {
