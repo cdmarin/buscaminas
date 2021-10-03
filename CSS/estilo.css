@@ -1,3 +1,7 @@
+html {
+    cursor: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -6,7 +10,6 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     word-spacing: 5px;
     line-height: 25px;
-    cursor: none;
 }
 
 a {
@@ -60,7 +63,6 @@ iframe {
 }
 
 .abajo {
-    height: 90px;
     transition: 0.5s;
 }
 
@@ -120,6 +122,20 @@ h2 {
 
 /* SECCION DE JUEGO */
 
+#mostBotones {
+    position: absolute;
+    box-shadow: inset 0 0 10px rgb(24, 103, 125);
+    background-color: rgb(63, 114, 201);
+    color: white;
+    padding: 10px;
+    border: 3px solid white;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: none;
+    transition: .4s;
+}
+
 .palabra {
     text-align: center;
     text-shadow: 0px 10px 10px black;
@@ -167,6 +183,11 @@ h2 {
     padding-left: 20px;
 }
 
+#letAdivinadas {
+    text-align: center;
+    text-shadow: 0px 5px 10px rgb(32, 48, 32);
+}
+
 /* SECCION FINAL */
 
 #secF {
@@ -198,7 +219,7 @@ h2 {
     animation: parpadearMal 3s infinite;
 }
 
-/*************** ORDENADOR *****************/
+/****************************************************** ORDENADOR ***************************************************************/
 
 @media only screen and (min-width: 1500px) {
     body {
@@ -219,20 +240,22 @@ h2 {
     }
     /* MENU */
     .menu {
-        height: 60px;
+        height: 80px;
     }
     .abajo {
-        transform: translateY(-40%);
+        transform: translateY(-30%);
     }
     .menu a {
-        font-size: 33px;
-        margin: 60px;
+        font-size: 43px;
+        margin: 90px;
+        top: 30px;
+        transition: .5s;
+
     }
     .menu a:hover {
         text-shadow: 0px 0px 20px rgb(172, 172, 172), 0 10px 30px rgb(186, 189, 184), 0 10px 90px rgb(186, 216, 165);
-        top: 10px;
+        top: 20px;
         text-decoration: underline;
-        transition: .5s;
         animation: agrandar 1s normal 0s forwards;
     }
     /* CONTENIDO DE LA PAGINA */
@@ -255,6 +278,15 @@ h2 {
         font-size: 20px;
     }
     /* SECCION DE JUEGO */
+    #mostBotones {
+        top: 50%;
+        left: 80%;
+        width: 200px;
+        font-size: 15px;
+    }
+    #mostBotones:hover {
+        box-shadow: inset 0 0 10px white, 0 0 10px white, 0 0 20px white;
+    }
     .palabra {
         font-size: 80px;
         letter-spacing: 15px;
@@ -268,13 +300,11 @@ h2 {
         width: 70px;
         transition: .7s;
     }
+    #letAdivinadas {
+        font-size: 30px;
+    }
     #barraVida {
         height: 20px;
-    }
-    #letAdivinadas {
-        text-align: center;
-        font-size: 30px;
-        text-shadow: 0px 5px 10px rgb(32, 48, 32);
     }
     #contPista {
         top: 50%;
@@ -318,7 +348,7 @@ h2 {
     }
 }
 
-/******************* MOVIL ********************/
+/***************************************************************************** MOVIL ***********************************************************************************/
 
 @media only screen and (min-width: 0px) and (max-width: 1000px) {
     #raton {
@@ -342,12 +372,12 @@ h2 {
         transform: translateY(-120%);
     }
     .menu a {
-        font-size: 20px;
+        font-size: 25px;
         margin: 10px;
     }
     /* CONTENIDO DE LA PAGINA */
     .bloque {
-        transform: translateX(.5%);
+        transform: translateX(.4%);
         width: 45vh;
         height: 60vh;
     }
@@ -366,6 +396,13 @@ h2 {
         font-size: 14px;
     }
     /* SECCION DE JUEGO */
+    #mostBotones {
+        padding: 5px;
+        top: 48%;
+        left: 70%;
+        width: 100px;
+        font-size: 10px;
+    }
     .palabra {
         font-size: 30px;
         letter-spacing: 15px;
@@ -420,7 +457,7 @@ h2 {
     }
 }
 
-/******************* IPAD ********************/
+/***************************************************************************** IPAD ****************************************************************************************/
 
 @media only screen and (min-width: 1001px) and (max-width: 1499px) {
     #raton {
@@ -447,10 +484,10 @@ h2 {
         font-size: 30px;
         margin: 30px;
     }
-    /******** CONTENIDO DE LA PAGINA ********/
+    /* CONTENIDO DE LA PAGINA */
     .bloque {
-        transform: translateX(11%);
-        width: 55vh;
+        transform: translateX(6.5%);
+        width: 60vh;
         height: 35vh;
     }
     h2 {
@@ -468,6 +505,12 @@ h2 {
         font-size: 14px;
     }
     /* SECCION DE JUEGO */
+    #mostBotones {
+        top: 44%;
+        left: 76%;
+        width: 150px;
+        font-size: 20px;
+    }
     .palabra {
         font-size: 60px;
         letter-spacing: 15px;
@@ -485,6 +528,8 @@ h2 {
         height: 20px;
     }
     #letAdivinadas {
+        text-align: center;
+        font-size: 20px;
         display: none;
     }
     #contPista {
@@ -582,7 +627,7 @@ h2 {
     }
     100% {
         background-color: #53b1e3;
-        height: 60px;
+        height: 80px;
     }
 }
 

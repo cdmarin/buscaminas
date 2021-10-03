@@ -11,7 +11,7 @@
         href="https://www.tiendadeapps.com/juego-de-ahorcado/juego-de-ahorcado-adivinar-palabras.png"
         type="image/x-icon">
     <link rel="stylesheet" href="CSS/estilo.css">
-    <script src="JS/scriptTeclado.js"></script>
+    <script src="JS/scriptTeclado.js" type="module"></script>
 </head>
 
 <body>
@@ -29,7 +29,6 @@
         <a id="inicio" href="#inicio">INICIO</a>
         <a id="jugar" href="#jugar">JUGAR</a>
         <a id="reglas" href="#reglas">REGLAS</a>
-        <a id="mostBotones" href="#">BOTONES</a>
     </section>
 
     <!-- Seccion de Explicacion del Juego -->
@@ -76,8 +75,6 @@
 
     <!-- Seccion juego -->
     <section id=secJ class="bloque ocultar">
-        <!-- <h2 id=titJ>JUEGO</h2> -->
-
 
         <div id="carrera">
             <img id=homer src="https://i.pinimg.com/originals/d8/55/9f/d8559f57d2cfcc8db35f032b424f1fe8.gif"
@@ -92,11 +89,13 @@
         <div id=botones style="text-align: center;"></div>
         <div id=contPista>
             <img id="pista" src="https://i.pinimg.com/originals/01/d0/ce/01d0cef533a0a3a45392751267d03047.png"
-                alt="pista">
+                alt="pistas">
             <p id="numPistas"></p>
         </div>
 
         <div id="letAdivinadas"></div>
+        <button id="mostBotones" href="#">BOTONES</button>
+
 
 
     </section>
