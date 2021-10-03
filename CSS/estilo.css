@@ -486,9 +486,9 @@ h2 {
     }
     /* CONTENIDO DE LA PAGINA */
     .bloque {
-        transform: translateX(6.5%);
-        width: 60vh;
-        height: 35vh;
+        transform: translateX(13%) translateY(20%);
+        width: 70vh;
+        height: 45vh;
     }
     h2 {
         font-size: 40px;
