@@ -252,8 +252,7 @@ td {
 }
 
 .volumen {
-    position: absolute;
-    top: 22vh;
+    margin-top: 8vh;
     left: 16vh;
     user-select: none;
 }
