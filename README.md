@@ -1,2 +1,2 @@
 # Juego de Charles
-Ahorcado
+Juego
