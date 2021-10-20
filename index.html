@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca el Impostor</title>
+    <link rel="stylesheet" href="CSS/estilo.css">
+
+    <link rel="shortcut icon" href="IMG/icono.png" type="image/x-icon">
+
+    <script src="JS/script.js" type="module"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <!-- PANTALLA DE INICIO -->
+    <section id=inicio class="mostrar">
+        <h1>BUSCA IMPOSTORES</h1>
+
+        <button id="bInicio">JUGAR</button>
+    </section>
+
+    <!-- SECCION DEL JUEGO -->
+    <section id="jugar" class="ocultar">
+
+        <!-- MENU -->
+        <div id=menu>
+            <img id=ini src="IMG/icono.png" alt="">
+            <h2 id=reset>Empezar Partida</h2>
+            <h2 id=reglas>Info. del Juego</h2>
+            <h2 id=about>About Among Us</h2>
+
+            <div class="dropdown">
+                <button style="color: white;" class=" dropdown-toggle" type="button" id="desplegable"
+                    data-toggle="dropdown">
+                    Dificultad
+                </button>
+                <div class="dropdown-menu" style="border:2px solid black;" aria-labelledby="desplegable">
+                    <a class="dropdown-item dif" id=fac>Fácil</a>
+                    <a class="dropdown-item dif" id=med>Intermedio</a>
+                    <a class="dropdown-item dif" id=dif>Difícil</a>
+                    <a class="dropdown-item dif" id=exp>Experto</a>
+                </div>
+                <p id=actDif>Fácil</p>
+            </div>
+
+
+
+            <div class="dropup volumen">
+
+                <img id="desplVolumen" data-toggle="dropdown" src="IMG/volumen.png" alt="">
+
+                <div class="dropdown-menu" style="border:2px solid black;" aria-labelledby="desplVolumen">
+
+                    <p class="dropdown-item" id=efecS>Efectos de Sonido: On</p>
+                    <input id=efecS2 type="range" id="Range1" value="100" min="0" max="100">
+
+                    <p class="dropdown-item" id=musF>Musica de Fondo: On</p>
+                    <input id=musF2 type="range" id="Range1" value="100" min="0" max="100">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PARTE DE LA PANTALLA DONDE SE ENCUENTRA LA TABLA, EL MARCADOR Y DEMÁS ELEMENTOS DEL JUEGO -->
+        <div id=contJuego class="ocultar">
+            <table id="tablaMina"></table>
+            <div class=marcador>
+                <p id=reloj></p>
+                <img src="IMG/impostor.png" alt="">
+                <p id=numImpostores></p>
+                <hr style="opacity: 0; clear: both;">
+                <p class="titPista">Pistas</p>
+                <img id=pista src="IMG/pista.png" alt="">
+                <p id=numPistas></p>
+                <p id=instrucciones style="opacity: 0;">Marque la Casilla Deseada</p>
+            </div>
+
+            <img id=shh src="IMG/shh.png" alt="">
+
+        </div>
+
+        <!-- CONTENEDOR DE LAS REGLAS -->
+        <div id=contReglas class="ocultar">
+            <h2>REGLAS</h2>
+            <hr>
+            <img src="https://ep01.epimg.net/tecnologia/imagenes/2018/02/13/actualidad/1518525589_925555_1518526201_noticia_normal.jpg"
+                alt="">
+            <p>
+                El juego consiste en despejar todas las casillas de una pantalla que no oculten una mina.
+            </p>
+            <p>
+                Algunas casillas tienen un número, este número indica las minas que son en todas las casillas
+                circundantes. Así, si una casilla tiene el número 3, significa que de las ocho casillas que hay
+                alrededor (si no es en una esquina o borde) hay 3 con minas y 5 sin minas. Si se descubre una casilla
+                sin número indica que ninguna de las casillas vecinas tiene mina y estas se descubren automáticamente.
+            </p>
+            <p>
+                Si se descubre una casilla con una mina se pierde la partida.
+            </p>
+            <p>
+                Se puede poner una marca en las casillas que el jugador piensa que hay minas para ayudar a descubrir las
+                que están cerca.
+            </p>
+            <br>
+            <h2>NIVELES DE JUEGO</h2>
+            <hr>
+            <p>
+                El juego también posee un sistema de récords para cada uno de los 4 niveles en el que se indica el menor
+                tiempo en terminar el juego. Los niveles son (para las nuevas versiones):
+                <br>
+                <br>
+                - Nivel principiante: 11 × 11 casillas y 15 minas.
+                <br>
+                - Nivel intermedio: 12 × 12 casillas y 25 minas.
+                <br>
+                - Nivel dificil: 14 × 14 casillas y 35 minas.
+                <br>
+                - Nivel experto: 15 × 15 casillas y 50 minas.
+                <br>
+                - Nivel personalizado: en este caso el usuario personaliza su juego eligiendo el número de minas y el
+                tamaño de la cuadrícula.
+                <br>
+                <br>
+                En versiones anteriores a Windows 2000 la pantalla en nivel principiante sólo mide 8 × 8, y fue
+                agrandada para evitar que la probabilidad de hacer clic en una mina fuera la misma que en el nivel
+                intermedio: 10/(8×8) = 10/64 = 40/256 = 40/(16×16) 2​También se puede personalizar la dificultad de
+                juego según el tamaño de la pantalla y el número de minas.
+
+                En Windows XP el buscaminas tiene sonido. En Windows Vista se elimina la carita feliz que venía
+                apareciendo en versiones anteriores de Windows; además, agrega nuevos efectos y la posibilidad de
+                cambiar las minas por flores.
+            </p>
+
+        </div>
+
+        <!-- CONTENEDOR DE INFORMACION EXTRA SOBRE LA TEMATICA DEL BUSCAMINAS -->
+
+        <div id="abAmong" class="ocultar">
+            <h2>ABOUT AMONG US</h2>
+            <hr>
+
+            <img src="https://wallpapercave.com/wp/wp7703148.png" alt="">
+            <p>
+                Among Us es un videojuego multijugador para cuatro a quince jugadores ambientado en una nave espacial.
+                En cada juego, un anfitrión es responsable de crear la partida y seleccionar la cantidad de «impostores»
+                que habría de tener la sesión, los cuales son jugadores que deben sabotear las tareas y matar a los
+                demás tripulantes de la nave sin ser descubiertos. Estos últimos a su vez están a cargo de descubrir los
+                impostores y llevar a cabo las «tareas de mantenimiento» del vehículo. Una partida puede tener lugar en
+                uno de los cuatro mapas disponibles: The Skeld, centrado en el interior de una nave, Mira HQ, ambientado
+                en una estación espacial, Polus, asentado en una base de investigación, o The Airship, ubicado en
+                un dirigible.
+            </p>
+            <p>
+                Al comienzo del juego, a los tripulantes se les asignan «tareas» para completar alrededor del mapa en
+                forma de minijuegos, que consisten en trabajos de mantenimiento en sistemas vitales como el recableado
+                eléctrico y el reabastecimiento de combustible del motor. A los impostores se le da las mismas «tareas»
+                para que se mezclen con los tripulantes, aunque no pueden completar la misma. Su propósito es sabotear
+                los sistemas vitales, viajar de forma encubierta a través de las salidas de aire y trabajar con otros
+                impostores para matar a los compañeros de tripulación. Si un jugador muere se convierte en un
+                fantasma, los cuales pueden atravesar las paredes, ser invisibles para todos excepto para los demás
+                fantasmas y no pueden comunicarse con los jugadores vivos; sin embargo, sus tareas siguen activas.
+                Todos los jugadores excepto los fantasmas​ tienen un campo de visión limitado, que solo les permite
+                ver a otros jugadores dentro de una cierta distancia a su alrededor.
+            </p>
+            <img src="https://wallpapercave.com/wp/wp7827964.jpg" alt="">
+            <p>
+                Los tripulantes ganan al completar todas las tareas o al identificar y eliminar a todos los impostores.
+                En contraparte, los impostores obtienen el triunfo cuando el número de impostores es igual al número de
+                compañeros de tripulación o una cuenta atrás de sabotaje llega a cero. Los fantasmas ayudan a sus
+                compañeros de equipo vivos al completar tareas (como tripulante) o realizar sabotajes (como impostor).
+                Cuando un impostor lleva a cabo un sabotaje, se altera el funcionamiento de la nave o lugar y, por
+                ejemplo, se apagan las luces o comienza una cuenta regresiva. En el último caso, si el sabotaje no se
+                resuelve antes de que finalice la cuenta atrás, ganan los impostores. Los sabotajes pueden ser resueltos
+                por jugadores vivos de diferentes formas conforme al tipo de sabotaje que se realice. El juego también
+                finaliza cuando los jugadores abandonan una partida y asegure alguna condición de victoria; un jugador
+                que abandona es equivalente a que lo eliminen, y un compañero de equipo que renuncia hace que sus tareas
+                se consideren completadas para el total.
+            </p>
+
+        </div>
+
+
+    </section>
+
+    <!-- SECCION DE MINIJUEGO DE LOS ASTEROIDES -->
+    <section id=minAsteroides class="ocultar">
+        <div id="contMet">
+            <h1 id="rest">METEORITOS RESTANTES: 10</h1>
+            <img id=puntero src="IMG/mira.png" alt="">
+        </div>
+    </section>
+
+    <!-- SECCION DE MINIJUEGO DE LOS LINEAS -->
+
+    <section id=minCable class="ocultar">
+
+        <svg class="svg" width="100%" height="100vh">
+            <line id="verde" x1="0" y1="100" x2="100" y2="100" stroke-width="5%" stroke="green" />
+            <line id="rojo" x1="0" y1="300" x2="100" y2="300" stroke-width="5%" stroke="red" />
+            <line id="azul" x1="0" y1="500" x2="100" y2="500" stroke-width="5%" stroke="blue" />
+            <line id="amarillo" x1="0" y1="700" x2="100" y2="700" stroke-width="5%" stroke="yellow" />
+        </svg>
+
+        <svg class="svg2" width="100%" height="100vh">
+
+            <line id="verde2" x1="100%" y1="100" x2="95%" y2="100" stroke-width="5%" stroke="green" />
+            <line id="rojo2" x1="100%" y1="500" x2="95%" y2="500" stroke-width="5%" stroke="red" />
+            <line id="azul2" x1="100%" y1="300" x2="95%" y2="300" stroke-width="5%" stroke="blue" />
+            <line id="amarillo2" x1="100%" y1="700" x2="95%" y2="700" stroke-width="5%" stroke="yellow" />
+        </svg>
+        <h1>CONECTE LOS CABLES CON SU COLOR CORRESPONDIENTE
+        </h1>
+    </section>
+
+    <!-- SECCION FINAL DONDE SE MOSTRAR LA IMAGEN DE DERROTA O VICTORIA -->
+    <section id="final" class="ocultar">
+    </section>
+
+</body>
+
+</html>

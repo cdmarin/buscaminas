@@ -1,0 +1,498 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+html {
+    background-color: black;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    animation: aparecer 2s normal forwards;
+}
+
+hr {
+    background-color: white;
+}
+
+/****************************************************** SECCION DE INICIO ******************************************************/
+
+#inicio {
+    position: absolute;
+    background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.653)), url(../IMG/fondoPrinc.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    border: 4px solid black;
+    text-align: center;
+    z-index: 8;
+}
+
+#inicio>h1 {
+    font-size: 20vh;
+    word-spacing: 10vh;
+    font-family: "h1Princ";
+    line-height: 50vh;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke: 2px white;
+    text-shadow: 0 1vh 1vh black, 0 1vh 4vh black, 0 1vh 7vh rgb(99, 99, 99), 0 1vh 12vh black, 0 1vh 20vh black;
+    transition: 1s;
+    user-select: none;
+}
+
+#bInicio {
+    font-family: texto;
+    font-size: 7vh;
+    letter-spacing: 5vh;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke: .1vh white;
+    width: 80vh;
+    border-radius: 3vh;
+    border: none;
+    padding: 2vh;
+    padding-left: 5vh;
+    box-shadow: 0 0 2vh rgba(66, 66, 66, 0.626), 0 0 6vh black, 0 0 8vh black, inset 0 0 1vh black, inset 0 0 4vh black;
+    background-color: rgba(52, 52, 52, 0.864);
+    cursor: pointer;
+    margin-top: 5vh;
+    transition: .7s;
+}
+
+#bInicio:hover {
+    transform: translateY(-2vh) scale(102%);
+    box-shadow: 0 0 30px rgba(164, 164, 164, 0.626), 0 0 70px black, 0 0 80px black, inset 0 0 10px black, inset 0 0 40px black;
+    background-color: rgb(52, 52, 52);
+}
+
+/****************************************************** SECCION DE JUEGO ******************************************************/
+
+#jugar {
+    position: absolute;
+    width: 110%;
+    height: 105%;
+    background-image: url(../IMG/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+}
+
+#tablaMina, #contReglas, #final {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#shh {
+    opacity: 0;
+    display: none;
+    position: absolute;
+    width: 70vh;
+    left: 0;
+    right: 0;
+    top: 10vh;
+    margin: auto;
+    transition: 1s;
+}
+
+#tablaMina {
+    transform: translateX(-5%);
+    text-align: center;
+    width: 60%;
+    top: 2vh;
+    border-collapse: separate;
+    border-spacing: .3vh;
+    transition: .9s;
+}
+
+td {
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke: .15vh rgb(197, 197, 197);
+    text-shadow: 0 0 10px red, 0 0 20px rgb(115, 16, 16);
+    font-family: "tdLetra";
+    font-size: 3.5vh;
+    border: .1vh solid white;
+    box-shadow: inset 0 0 1vh black, inset 0 0 2vh rgb(52, 58, 64);
+    background-color: rgba(0, 0, 0, 0.517);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 5vh;
+    height: 6vh;
+    transition: .5s;
+    border-radius: .7vh;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* MARCADOR DEL JUEGO */
+
+.marcador {
+    width: 21vh;
+    height: 60vh;
+    background-color: rgb(87, 77, 104);
+    position: absolute;
+    right: 11%;
+    top: 5vh;
+    border-radius: 1vh;
+    border: .4vh solid white;
+}
+
+#numImpostores {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 6vh;
+    margin-top: 5vh;
+}
+
+#reloj {
+    text-align: center;
+    margin-top: 2vh;
+    font-weight: bold;
+    font-family: reloj;
+    font-size: 6vh;
+}
+
+.marcador>img {
+    margin-top: 3vh;
+    width: 10vh;
+    float: left;
+}
+
+#pista {
+    cursor: pointer;
+    margin-bottom: 1vh;
+    margin-left: 1vh;
+    margin-top: -1vh;
+}
+
+#numPistas {
+    text-align: center;
+    margin-top: -2vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 6vh;
+}
+
+#instrucciones {
+    font-size: 2vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.titPista {
+    font-size: 3vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+/****************************************************** MENU ******************************************************/
+
+#menu {
+    position: absolute;
+    background-color: rgb(37, 30, 66);
+    box-shadow: inset 0 0 1vh rgb(169, 169, 169), inset 0 0 3vh rgb(74, 74, 74);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-right: .4vh solid white;
+    padding-top: 7vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    height: 99%;
+    transition: .5s;
+    z-index: 8;
+}
+
+#ini {
+    width: 20vh;
+    cursor: pointer;
+}
+
+#menu>h2, #desplegable {
+    font-size: 3vh;
+    padding-top: 4vh;
+    transition: .3s;
+    cursor: pointer;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: .1vh black;
+}
+
+#menu>h2:hover {
+    transform: scale(105%) translateY(-6%);
+    text-shadow: 0 0 1vh white;
+}
+
+#desplegable:hover {
+    text-shadow: 0 0 1vh white;
+}
+
+#desplegable {
+    background-color: transparent;
+    margin-left: -.8vh;
+    border: none;
+    transition: 1s;
+}
+
+.dropdown-item {
+    cursor: pointer;
+    font-size: 2.5vh;
+    transition: 1s;
+}
+
+#actDif {
+    font-size: 2.2vh;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: .05vh black;
+}
+
+.volumen {
+    position: absolute;
+    top: 22vh;
+    left: 16vh;
+    user-select: none;
+}
+
+.volumen>img {
+    user-select: none;
+    width: 6vh;
+    cursor: pointer;
+}
+
+#efecS2, #musF2 {
+    width: 25vh;
+    margin-left: 2vh;
+    cursor: pointer;
+}
+
+/****************************************************** REGLAS ******************************************************/
+
+#contReglas {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.524), rgba(0, 0, 0, 0.755)), url(../IMG/fondoReglas.jpg);
+    color: white;
+}
+
+#contReglas, #abAmong {
+    overflow-y: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin-top: 2vh;
+    padding-top: 3vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    border: .6vh solid white;
+    border-radius: 2vh;
+    box-shadow: 0 0 20px black, 0 0 50px black;
+    width: 73vw;
+    height: 90vh;
+    font-family: parrafo;
+    word-spacing: .3vh;
+    margin-left: 40vh;
+    margin-top: 5vh;
+}
+
+#contReglas>img {
+    width: 60vh;
+    border: .4vh solid white;
+    border-radius: .6vh;
+    margin-left: 20px;
+    float: right;
+}
+
+#contReglas>h2 {
+    font-size: 6vh;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.612);
+}
+
+#contReglas>p {
+    font-size: 3vh;
+}
+
+/****************************************************** ABOUT ******************************************************/
+
+#abAmong {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.524), rgba(0, 0, 0, 0.755)), url(https://disruptivoo.com/wp-content/uploads/2020/10/Los-mejores-24-Fondos-de-Pantalla-de-among-Us-16.jpg);
+    color: white;
+}
+
+#abAmong>img {
+    height: 45vh;
+    padding: 2vh;
+    float: right;
+    border-radius: 5vh;
+}
+
+#abAmong>h2 {
+    font-size: 6vh;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.612);
+}
+
+#abAmong>p {
+    text-shadow: 0 0 10px rgb(39, 0, 0);
+    font-size: 3vh;
+}
+
+/* SECCION FINAL */
+
+#final {
+    position: absolute;
+    width: 100%;
+    height: 105%;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    transition: 2s;
+}
+
+/****************************************************** MINIJUEGO ******************************************************/
+
+/* CABLES */
+
+#minCables, #minAsteroides {
+    position: absolute;
+    width: 110%;
+    height: 105%;
+    top: 0;
+    z-index: 10;
+}
+
+#minCable>h1 {
+    position: absolute;
+    top: 1vh;
+    left: 15%;
+    z-index: 12;
+    font-family: texto;
+    font-size: 190%;
+    word-spacing: 1vh;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: .1vh black;
+    user-select: none;
+}
+
+.svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border: 2px solid black;
+    z-index: 11;
+    text-shadow: 0 0 1vh black, 0 0 2vh black;
+}
+
+.svg2 {
+    position: absolute;
+    background-image: url(../IMG/cables-daltonismo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    margin: auto;
+    z-index: 10;
+}
+
+line {
+    cursor: pointer;
+}
+
+.minCables {
+    z-index: 10;
+}
+
+/* ASTEROIDES */
+
+#contMet {
+    top: -1%;
+    position: absolute;
+    height: 102%;
+    width: 100%;
+    background-image: url(../IMG/fondoEspacio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -2.5%;
+    cursor: none;
+}
+
+#contMet>h1 {
+    user-select: none;
+    color: rgb(103, 103, 103);
+    margin-top: 1vh;
+    user-select: none;
+}
+
+#puntero {
+    position: absolute;
+    width: 25vh;
+    pointer-events: none;
+    z-index: 4;
+    user-select: none;
+    cursor: none;
+}
+
+.meteorito {
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20vh;
+    height: 20vh;
+    cursor: none;
+    transition: .1s;
+}
+
+@font-face {
+    font-family: "tdLetra";
+    src: url(../FONT/Aliens\ Among\ Us.ttf);
+}
+
+@font-face {
+    font-family: "h1Princ";
+    src: url(../FONT/amongus\ vector.ttf);
+}
+
+@font-face {
+    font-family: "texto";
+    src: url(../FONT/Doctor\ Glitch.otf);
+}
+
+@font-face {
+    font-family: "parrafo";
+    src: url(../FONT/OldNewspaperTypes.ttf);
+}
+
+@font-face {
+    font-family: "reloj";
+    src: url(../FONT/alarm\ clock.ttf);
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        display: block;
+    }
+}
+
+@keyframes desaparecer {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        display: none;
+    }
+}
