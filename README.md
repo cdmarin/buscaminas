@@ -1,2 +1,2 @@
-# ahorcadoCharles
+# Juego de Charles
 Ahorcado
