@@ -12,6 +12,7 @@ var primera = true;
 var numpistas = 1;
 var auxNumPistas;
 var boolPista = false;
+var ultMin = -1;
 
 // ARRAYS
 var blanco = [];
@@ -507,13 +508,16 @@ function pista() {
 
         // EMPIEZA EL MINIJUEGO, PARA SU ELECCION SE GENERA UN NUMERO RANDOM ENTRE 0 Y 1
         var numR = parseInt(Math.random() * (2 - 0) + 0);
-        alert(numR);
-        if (numR == 0) {
+        console.log(numR + " --- " + ultMin);
+        if (numR == 0 && ultMin != 0) {
+            ultMin = 0;
+            
             document.getElementById("minCable").classList.remove("ocultar");
             document.getElementById("minCable").classList.add("mostrar");
             empiezaCables();
         }
-        else if (numR == 1) {
+        else {
+            ultMin = 1;
             document.getElementById("minAsteroides").classList.remove("ocultar");
             document.getElementById("minAsteroides").classList.add("mostrar");
             empiezaAsteroides(sonido, efecSonido);
