@@ -507,7 +507,7 @@ function pista() {
 
         // EMPIEZA EL MINIJUEGO, PARA SU ELECCION SE GENERA UN NUMERO RANDOM ENTRE 0 Y 1
         var numR = parseInt(Math.random() * (2 - 0) + 0);
-
+        alert(numR);
         if (numR == 0) {
             document.getElementById("minCable").classList.remove("ocultar");
             document.getElementById("minCable").classList.add("mostrar");
