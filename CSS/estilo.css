@@ -125,7 +125,7 @@ td {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 5vh;
+    width: 4.5vh;
     height: 6vh;
     transition: .5s;
     border-radius: .7vh;
@@ -253,7 +253,7 @@ td {
 
 .volumen {
     margin-top: 8vh;
-    left: 16vh;
+    left: 0vh;
     user-select: none;
 }
 
